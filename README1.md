@@ -4,7 +4,7 @@
 
 * [1. Preámbulo](#1-preámbulo)
 * [2. Resumen del proyecto](#2-resumen-del-proyecto)
-* [3. Configuraciones](#3-configuraciones)
+* [3. Objetivos de aprendizaje](#3-objetivos-de-aprendizaje)
 * [4. Consideraciones generales](#4-consideraciones-generales)
 * [5. Criterios de aceptación mínimos del proyecto](#5-criterios-de-aceptación-mínimos-del-proyecto)
 * [6. Pistas, tips y lecturas complementarias](#6-pistas-tips-y-lecturas-complementarias)
@@ -61,8 +61,7 @@ o es un plagio de uno post ya existente.
 [Mercado Pago](https://www.mercadopago.com.co/developers/en/guides),
 [Culqui](https://docs.culqi.com/) o [Wompi](https://docs.wompi.co/)
 
-## 3. Configuraciones 
-* coneción a docker
+## 3. Objetivos de aprendizaje
 
 Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
 
@@ -452,10 +451,5 @@ para crear el HTML. El HTML resultante es transferido al servidor web Apache
 para que  este a su vez los envíe al navegador. Al final, el HTML es mostrado
 por el navegador web al usuario.
 
-
-
 ## entrar a este link para iniciar seción WORPRESS
 http://localhost/wp-login.php?redirect_to=http%3A%2F%2Flocalhost%2Fwp-admin%2Fplugins.php&reauth=1
-
-* colocar contraseña y usuario
-*

@@ -6,3 +6,5 @@
 /php-playground/*
 !/php-playground/hola.php
 !/php-playground/index.html
+#.env
+.env
