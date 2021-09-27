@@ -1,7 +1,7 @@
 #html
 /html/*
 !/html/.keep
-!/html/wp-content/plugins/*
+!/html/wp-content/plugins/
 
 #mysql
 /php-playground/*
