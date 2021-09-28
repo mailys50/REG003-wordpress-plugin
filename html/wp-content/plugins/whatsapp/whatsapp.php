@@ -10,6 +10,7 @@
 
 //Usamos el hook wp_footer que hace referencia a la función dcms_add_footer_whatsapp
 add_action('wp_footer','dcms_add_footer_whatsapp');
+
 // TODO Dentro de la función podemos cambiar el valor del número telefónico en la variable $tel, que debe constar sólo de números También podemos enviar un mensaje por defecto en la variable $ms
 //formamos el HTML con CSS en línea usando todos los valores de las variables anteriores
 function dcms_add_footer_whatsapp(){
