@@ -1,7 +1,8 @@
 #html
 /html/*
 !/html/.keep
-!/html/wp-content/plugins/
+!/html/wp-content/plugins/whatsapp
+!/html/wp-content/plugins/whatsapp/whatsapp.php
 
 #mysql
 /php-playground/*

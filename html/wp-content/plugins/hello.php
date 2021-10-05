@@ -42,14 +42,14 @@ Dolly, never go away
 Promise, you'll never go away
 Dolly'll never go away again";
 
-	// Here we split it into lines.
+	// Here we split it into lines.(Aquí la dividimos en líneas.)
 	$lyrics = explode( "\n", $lyrics );
 
-	// And then randomly choose a line.
+	// And then randomly choose a line.(Y luego elige una línea al azar.)
 	return wptexturize( $lyrics[ mt_rand( 0, count( $lyrics ) - 1 ) ] );
 }
 
-// This just echoes the chosen line, we'll position it later.
+// This just echoes the chosen line, we'll position it later.(Esto solo hace eco de la línea elegida, la posicionaremos más tarde.)
 function hello_dolly() {
 	$chosen = hello_dolly_get_lyric();
 	$lang   = '';
@@ -65,10 +65,10 @@ function hello_dolly() {
 	);
 }
 
-// Now we set that function up to execute when the admin_notices action is called.
+// Now we set that function up to execute when the admin_notices action is called.(Ahora configuramos esa función para que se ejecute cuando se llame a la acción admin_notices.)
 add_action( 'admin_notices', 'hello_dolly' );
 
-// We need some CSS to position the paragraph.
+// We need some CSS to position the paragraph.(Necesitamos algo de CSS para posicionar el párrafo.)
 function dolly_css() {
 	echo "
 	<style type='text/css'>
