@@ -40,41 +40,15 @@ function mbd_form_whatsapp_init()
 
 
 
-// Define el shortcode y lo asocia a una función
-add_shortcode('MBD_plugin_whatsapp', 'whatsapp_form');
 
-function whatsapp_form() {
-    global $wpdb;
-    $tabla_form_whatsapps = $wpdb->prefix . 'form_whatsapp';
-    $extracData = $wpdb->get_results("SELECT * FROM $tabla_form_whatsapps");
-    foreach ($extracData as $data) {
-    $telephone = $data->$telephone;
-    $messages = $data->$messages; 
-
-    $tel =$telephone;
-	$ms = urlencode( $messages);
-    
-	$url = "https://wa.me/${tel}?text=${ms}";
-	$img = 'https://i.ibb.co/JRps0V5/floating_whatsapp-icon.png';
-	
-	// //console. log
-  echo("<script>console.log('PHP: " .  $telephone. "');</script>");
-
-
-	echo "<div id='float-floating_whatsapp' style='position:fixed;bottom:40px;right:40px;'>";
-	echo " <a href=${url} target='_blank'>";
-	echo " <img src='${img}' width=60 height=60 />";
-	echo " </a>";
-	echo "</div>";
-    }
-}
 add_action("admin_menu", "menu_whatsapps");
 function menu_whatsapps() {
     add_menu_page('Menú whatsapp', 
     'whatsapp',
     'manage_options',
     'menu__whatsapp',
-    'mbd_whatsapp_form','',3);
+    'mbd_whatsapp_form',
+    'dashicons-whatsapp',78);
 }
 /** 
  * Define la función que ejecutará el shortcode
@@ -132,6 +106,7 @@ function mbd_whatsapp_form()
         
      ?>
         <form action="<?php get_the_permalink(); ?>" method="post" id="form_whatsapp" class="cuestionario">
+        <?php wp_nonce_field('graba_whatsapp','whatsapp'); ?>
         <div class="form-input">
             <label for="telephone">Teléfono</label>
             <input type="text" name="telephone" id="telephone" required>
@@ -161,7 +136,33 @@ function mbd_whatsapp_form()
 }
 
 	   
+// Define el shortcode y lo asocia a una función
+add_shortcode('MBD_plugin_whatsapp', 'whatsapp_form');
 
+function whatsapp_form() {
+    global $wpdb;
+    $tabla_form_whatsapps = $wpdb->prefix . 'form_whatsapp';
+    $extracData = $wpdb->get_results("SELECT * FROM $tabla_form_whatsapps");
+    foreach ($extracData as $data) {
+    $telephone = $data->telephone;
+    $messages = $data->messages; 
+    $tel =$telephone;
+	$ms = urlencode( $messages);
+    
+	$url = "https://wa.me/$tel?text=$ms";
+	$img = 'https://i.ibb.co/JRps0V5/floating_whatsapp-icon.png';
+	
+	// //console. log
+  echo("<script>console.log('PHP: " .  $img. "');</script>");
+
+
+	echo "<div id='float-floating_whatsapp' style='position:fixed;bottom:40px;right:40px;'>";
+	echo " <a href=${url} target='_blank'>";
+	echo " <img src='${img}' width=60 height=60 />";
+	echo " </a>";
+	echo "</div>";
+    }
+}
 
 
 
